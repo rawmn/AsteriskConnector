@@ -111,13 +111,7 @@ defmodule AsteriskConnector.AmiEventHandler do
     GenServer.cast(via_tuple(keys["linkedid"]), {:who_hangup_put, data})
   end
 
-  # defp handle_event(_, _, %{event: "varset", keys: %{"variable" => "DIALEDTIME", "value" => duration}}) do
 
-  # end
-
-  # defp handle_event(_, _, %{event: "varset", keys: %{"variable" => "ANSWEREDTIME", "value" => duration}}) do
-
-  # end
 
   defp handle_event(
          _,
@@ -203,28 +197,5 @@ defmodule AsteriskConnector.AmiEventHandler do
     |> IO.inspect()
   end
 
-  # defp handle_event(_, _, event) do
-  #   case event do
-  #     # event.event in ~w"varset testevent successfulauth fullybooted" ->
-  #     #   # IO.puts("skip event: #{event.event}")
-  #     #   nil
 
-  #     # event.event == "varset" ->
-  #     #   IO.puts("----------------------------------------------------------------------")
-  #     #   IO.inspect("#{event.keys["variable"]} $ #{event.keys["value"]} $ ", label: "EVENT #{event.keys["calleridnum"]}:", pretty: true)
-  #     #   IO.puts("----------------------------------------------------------------------")
-
-  #     %{event: <<?r, ?t, ?c, ?p, _::binary>>, keys: _} ->
-  #       IO.puts("----------------------------------------------------------------------")
-  #       IO.inspect(event, label: "EVENT:", pretty: true)
-  #       IO.puts("----------------------------------------------------------------------")
-
-  #     _ ->
-  #       # IO.puts("skip event: #{event.event}")
-  #       nil
-  #       # IO.puts("----------------------------------------------------------------------")
-  #       # IO.inspect(event, label: "EVENT:", pretty: true)
-  #       # IO.puts("----------------------------------------------------------------------")
-  #   end
-  # end
 end
