@@ -1,5 +1,4 @@
 defmodule AsteriskConnector.Api do
-  require Logger
 
   def post(url, body) do
     Req.post(url, json: body)
@@ -19,16 +18,5 @@ defmodule AsteriskConnector.Api do
   defp handle_response({:error, reason}) do
     IO.puts("Ответ: #{reason}")
     {:error, reason}
-  end
-
-  def connect(username, password) do
-    post("http://localhost:4000/connect", %{
-      "username" => username,
-      "password" => password
-    })
-  end
-
-  def ping do
-    get("http://localhost:4000/ping")
   end
 end

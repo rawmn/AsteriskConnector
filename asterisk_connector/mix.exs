@@ -27,7 +27,8 @@ defmodule AsteriskConnector.MixProject do
       {:plug_cowboy, "~> 2.6"},
       # {:httpoison, "~> 1.8"},
       # {:jason, "~> 1.4"},
-      {:req, "~> 0.5.10"}
+      {:req, "~> 0.5.10"},
+      {:gproc, "~> 0.3.1"}
     ]
   end
 end
