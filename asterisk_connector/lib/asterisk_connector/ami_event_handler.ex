@@ -1,201 +1,90 @@
 defmodule AsteriskConnector.AmiEventHandler do
+  use GenServer
   require Logger
 
-  def child_spec(_) do
-    %{
-      id: __MODULE__,
-      start: {__MODULE__, :start, []},
-      type: :worker,
-      restart: :permanent
-    }
-  end
-
-  def start() do
+  def start_link(_) do
     Logger.debug("AsteriskConnector.AmiHandler start")
 
-    connection =
-      ElixirAmi.Supervisor.Ami.new(%{
-        name: __MODULE__,
-        host: "127.0.0.1",
-        port: 5038,
-        username: "test",
-        password: "123",
-        debug: false,
-        ssl_options: nil,
-        connect_timeout: 5000,
-        reconnect_timeout: 5000
-      })
+    GenServer.start_link(__MODULE__, %{}, name: __MODULE__)
+  end
+
+  def init(init_arg) do
+    connect()
+    {:ok, init_arg}
+  end
+
+  def connect(username \\ "test", secret \\ "123") do
+    ElixirAmi.Supervisor.Ami.new(%{
+      name: :asterisk_connection,
+      host: "127.0.0.1",
+      port: 5038,
+      username: username,
+      password: secret,
+      debug: false,
+      ssl_options: nil,
+      connect_timeout: 5000,
+      reconnect_timeout: 5000
+    })
 
     ElixirAmi.Connection.add_listener(
-      __MODULE__,
+      :asterisk_connection,
       &filter_events/3,
       &handle_event/3
     )
-
-    connection
   end
 
-  defp via_tuple(name) do
-    {:via, :gproc, {:n, :l, {:call, name}}}
-  end
+  def handle_cast({:new_event, event}, active_calls) do
+    active_calls
+    |> Map.get(event.keys["linkedid"])
+    |> send_event(event)
 
-  defp filter_events(_, _, _event), do: true
-
-  defp handle_event(_, _, %ElixirAmi.Event{
-         event: "newchannel",
-         keys:
-           %{
-             "linkedid" => linkedid,
-             "uniqueid" => linkedid
-           } = keys
-       }) do
-    CallDetail.start(linkedid)
-
-    data = %{
-      call_id: keys["linkedid"],
-      account_code: keys["accountcode"],
-      caller: %{
-        name: keys["calleridname"],
-        number: keys["calleridnum"],
-        channel: keys["channel"]
-      },
-      context: keys["context"],
-      exten: keys["exten"],
-      start_time: DateTime.utc_now(),
-      last_channel_state: keys["channelstatedesc"]
+    {
+      :noreply,
+      active_calls
     }
-
-    GenServer.cast(via_tuple(linkedid), {:newchannel, data})
   end
 
-  defp handle_event(_, _, %ElixirAmi.Event{event: "newchannel", keys: keys}) do
-    data = %{
-      callee: %{
-        name: keys["calleridname"],
-        number: keys["calleridnum"],
-        channel: keys["channel"]
-      },
-      last_channel_state: keys["channelstatedesc"]
+  defp send_event(nil, event) do
+    GenServer.cast(__MODULE__, {:new_call, event})
+  end
+
+  defp send_event(pid, event) do
+    GenServer.cast(pid, {:event, event})
+  end
+
+  def handle_cast({:new_call, event}, active_calls) do
+    {:ok, pid} = AsteriskConnector.CallDetail.start()
+    send_event(pid, event)
+
+    {
+      :noreply,
+      Map.put(active_calls, event.keys["linkedid"], pid)
     }
-
-    GenServer.cast(via_tuple(keys["linkedid"]), {:newchannel_callee, data})
   end
 
-  defp handle_event(_, _, %ElixirAmi.Event{
-         event: "bridgeenter",
-         keys:
-           %{
-             "linkedid" => linkedid,
-             "uniqueid" => linkedid
-           } = keys
-       }) do
-    answer_time = DateTime.utc_now()
-    start_time = GenServer.call(via_tuple(linkedid), :get_start_time)
+  def handle_cast({:call_ended, linkedid}, active_calls) do
+    {:noreply, Map.delete(active_calls, linkedid)}
+  end
 
-    data = %{
-      answer_time: answer_time,
-      duration_ring: DateTime.diff(answer_time, start_time),
-      last_channel_state: keys["channelstatedesc"]
+  def handle_call(:get_active_calls, _, active_calls) do
+    {
+      :reply,
+      active_calls,
+      active_calls
     }
-
-    GenServer.cast(via_tuple(linkedid), {:bridgeenter, data})
   end
 
-  defp handle_event(_, _, %{event: "hanguprequest", keys: keys}) do
-    data = %{
-      last_channel_state: keys["channelstatedesc"],
-      who_hangup:
-        "name:#{keys["calleridname"]};num:#{keys["calleridnum"]};channel:#{keys["channel"]}"
-    }
+  defp filter_events(_, _, %ElixirAmi.Event{keys: %{"linkedid" => _}}), do: true
+  defp filter_events(_, _, _), do: false
 
-    GenServer.cast(via_tuple(keys["linkedid"]), {:who_hangup_put, data})
+  defp handle_event(_, _, event) do
+    AsteriskConnector.EventLogger.log_event(event)
+    GenServer.cast(__MODULE__, {:new_event, event})
   end
 
-
-
-  defp handle_event(
-         _,
-         _,
-         %{event: "varset", keys: %{"variable" => "DIALSTATUS", "value" => status} = keys}
-       ) do
-    GenServer.cast(via_tuple(keys["linkedid"]), {:set_status, status})
+  def get_active_calls() do
+    GenServer.call(__MODULE__, :get_active_calls)
+    |> Map.values()
+    |> Enum.map(&AsteriskConnector.CallDetail.get_call_details/1)
   end
-
-  defp handle_event(_, _, %ElixirAmi.Event{
-         event: "hangup",
-         keys:
-           %{
-             "linkedid" => linkedid,
-             "uniqueid" => linkedid
-           } = keys
-       }) do
-    end_time = DateTime.utc_now()
-    start_time = GenServer.call(via_tuple(linkedid), :get_start_time)
-    answer_time = GenServer.call(via_tuple(linkedid), :get_answer_time)
-    duration_answer = if is_nil(answer_time), do: nil, else: DateTime.diff(end_time, answer_time)
-
-    data = %{
-      end_time: end_time,
-      duration_answer: duration_answer,
-      duration_call: DateTime.diff(end_time, start_time),
-      last_channel_state: keys["channelstatedesc"]
-    }
-
-    GenServer.cast(via_tuple(linkedid), {:hangup, data})
-    test_get_call_struct(keys["linkedid"])
-  end
-
-  defp handle_event(_, _, %ElixirAmi.Event{
-         event: "rtcpreceived",
-         keys: %{"pt" => "200(SR)"} = keys
-       }) do
-    data =
-      GenServer.call(via_tuple(keys["linkedid"]), :get_metrics)
-      |> calculate_new_metrics(keys)
-
-    GenServer.cast(via_tuple(keys["linkedid"]), {:rtcpreceived, data})
-  end
-
-  defp handle_event(_, _, _), do: nil
-
-  defp calculate_new_metrics(current_metrics, keys) do
-    max_rtt =
-      case Map.get(keys, "rtt") do
-        nil -> current_metrics.max_rtt
-        rtt -> max(String.to_float(rtt), current_metrics.max_rtt)
-      end
-
-    sent = keys["sentpackets"] |> String.to_integer()
-
-    max_loss =
-      case Map.get(keys, "report0cumulativelost") do
-        nil ->
-          current_metrics.max_loss
-
-        loss ->
-          loss
-          |> String.to_integer()
-          |> Kernel./(sent)
-          |> Kernel.*(100)
-          |> max(current_metrics.max_loss)
-      end
-
-    r_factor = 100 - (max_rtt / 10 + 2 * max_loss)
-
-    quality =
-      cond do
-        r_factor >= 80 -> "good"
-        r_factor >= 60 -> "not good"
-        true -> "bad"
-      end
-
-    %{max_rtt: max_rtt, max_loss: max_loss, r_factor: r_factor, quality: quality}
-  end
-
-  def test_get_call_struct(name) do
-    GenServer.call(via_tuple(name), :get)
-    |> IO.inspect()
-  end
-
-
 end

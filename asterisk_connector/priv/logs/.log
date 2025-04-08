@@ -1,0 +1,1243 @@
+[2025-04-08 15:06:26.688088Z] %ElixirAmi.Event{
+  event: "fullybooted",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "lastreload" => "36236",
+    "privilege" => "system,all",
+    "status" => "Fully Booted",
+    "uptime" => "36236"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:26.688099Z] %ElixirAmi.Event{
+  event: "successfulauth",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "test",
+    "eventtv" => "2025-04-08T22:06:26.678+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/TCP/0.0.0.0/5038",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/TCP/127.0.0.1/39248",
+    "service" => "AMI",
+    "sessionid" => "0x7f25f802c660",
+    "sessiontv" => "2025-04-08T22:06:26.678+0700",
+    "severity" => "Informational",
+    "usingpassword" => "0"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:29.496555Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_authenticator_digest.c",
+    "appfunction" => "verify",
+    "appline" => "359",
+    "privilege" => "reporting,all",
+    "realm" => "asterisk",
+    "state" => "INCOMING_AUTH_VERIFY_RESULT",
+    "status" => "NOAUTH",
+    "type" => "StateChange",
+    "username" => "101"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:29.496842Z] %ElixirAmi.Event{
+  event: "challengesent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "101",
+    "challenge" => "",
+    "eventtv" => "2025-04-08T22:06:29.496+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/UDP/192.168.0.16/5060",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/UDP/192.168.0.16/59920",
+    "service" => "PJSIP",
+    "sessionid" => "72f9305176294fe4ab8c732c466ec1e1",
+    "severity" => "Informational"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:29.497005Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_authenticator_digest.c",
+    "appfunction" => "verify",
+    "appline" => "359",
+    "privilege" => "reporting,all",
+    "realm" => "asterisk",
+    "state" => "INCOMING_AUTH_VERIFY_RESULT",
+    "status" => "SUCCESS",
+    "type" => "StateChange",
+    "username" => "101"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:29.497179Z] %ElixirAmi.Event{
+  event: "successfulauth",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "101",
+    "eventtv" => "2025-04-08T22:06:29.496+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/UDP/192.168.0.16/5060",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/UDP/192.168.0.16/59920",
+    "service" => "PJSIP",
+    "sessionid" => "72f9305176294fe4ab8c732c466ec1e1",
+    "severity" => "Informational",
+    "usingpassword" => "1"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:29.497346Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_rtp_asterisk.c",
+    "appfunction" => "rtp_allocate_transport",
+    "appline" => "3996",
+    "port" => "11360",
+    "privilege" => "reporting,all",
+    "state" => "RTP_PORT_ALLOCATED",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:29.498291Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "channel_internal_api.c",
+    "appfunction" => "ast_channel_callid_set",
+    "appline" => "831",
+    "callid" => "[C-00000031]",
+    "channel" => "PJSIP/101-00000060",
+    "priorcallid" => "",
+    "privilege" => "reporting,all",
+    "state" => "CallIDChange",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:29.502182Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "channel_internal_api.c",
+    "appfunction" => "ast_channel_callid_set",
+    "appline" => "831",
+    "callid" => "[C-00000031]",
+    "channel" => "PJSIP/102-00000061",
+    "priorcallid" => "",
+    "privilege" => "reporting,all",
+    "state" => "CallIDChange",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:29.503135Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_rtp_asterisk.c",
+    "appfunction" => "rtp_allocate_transport",
+    "appline" => "3996",
+    "port" => "17500",
+    "privilege" => "reporting,all",
+    "state" => "RTP_PORT_ALLOCATED",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:29.505975Z] %ElixirAmi.Event{
+  event: "devicestatechange",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "device" => "PJSIP/102",
+    "privilege" => "call,all",
+    "state" => "RINGING"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:29.506118Z] %ElixirAmi.Event{
+  event: "devicestatechange",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "device" => "PJSIP/101",
+    "privilege" => "call,all",
+    "state" => "INUSE"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:31.568362Z] %ElixirAmi.Event{
+  event: "devicestatechange",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "device" => "PJSIP/102",
+    "privilege" => "call,all",
+    "state" => "INUSE"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:31.568706Z] %ElixirAmi.Event{
+  event: "bridgecreate",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "bridgecreator" => "<unknown>",
+    "bridgename" => "<unknown>",
+    "bridgenumchannels" => "0",
+    "bridgetechnology" => "simple_bridge",
+    "bridgetype" => "basic",
+    "bridgeuniqueid" => "718e6f30-a5ba-45fa-b889-0e9910fcdab7",
+    "bridgevideosourcemode" => "none",
+    "privilege" => "call,all"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:33.340543Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "101;@145b17cb76837ca599ccaebb707e0e63",
+    "privilege" => "reporting,all",
+    "rtt" => "317",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:33.341600Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "102;@d66c6dc1229e711d6ed7ff88bcb8b49e",
+    "privilege" => "reporting,all",
+    "rtt" => "290",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:36.570320Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_rtp_asterisk.c",
+    "appfunction" => "ast_rtp_read",
+    "appline" => "8280",
+    "privilege" => "reporting,all",
+    "source" => "192.168.0.16:4106",
+    "state" => "STRICT_RTP_LEARN",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:36.602806Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_rtp_asterisk.c",
+    "appfunction" => "ast_rtp_read",
+    "appline" => "8280",
+    "privilege" => "reporting,all",
+    "source" => "192.168.0.16:4088",
+    "state" => "STRICT_RTP_LEARN",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:51.684223Z] %ElixirAmi.Event{
+  event: "bridgedestroy",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "bridgecreator" => "<unknown>",
+    "bridgename" => "<unknown>",
+    "bridgenumchannels" => "0",
+    "bridgetechnology" => "simple_bridge",
+    "bridgetype" => "basic",
+    "bridgeuniqueid" => "718e6f30-a5ba-45fa-b889-0e9910fcdab7",
+    "bridgevideosourcemode" => "none",
+    "privilege" => "call,all"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:51.686724Z] %ElixirAmi.Event{
+  event: "devicestatechange",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "device" => "PJSIP/102",
+    "privilege" => "call,all",
+    "state" => "NOT_INUSE"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:51.686884Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "app_mixmonitor.c",
+    "appfunction" => "mixmonitor_thread",
+    "appline" => "855",
+    "file" => "/home/rawmn/AsteriskConnector/asterisk_connector/priv/recordings/101_102_2025-04-081744124789.144",
+    "privilege" => "reporting,all",
+    "state" => "MIXMONITOR_END",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:51.687002Z] %ElixirAmi.Event{
+  event: nil,
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{},
+  variables: %{}
+}
+[2025-04-08 15:06:51.687011Z] %ElixirAmi.Event{
+  event: "devicestatechange",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "device" => "PJSIP/101",
+    "privilege" => "call,all",
+    "state" => "NOT_INUSE"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:56.678539Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_session.c",
+    "appfunction" => "session_destructor",
+    "appline" => "2971",
+    "endpoint" => "102",
+    "privilege" => "reporting,all",
+    "state" => "SESSION_DESTROYED",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:06:56.678536Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "aor" => "102",
+    "appfile" => "res_pjsip_session.c",
+    "appfunction" => "session_destructor",
+    "appline" => "2922",
+    "contact" => "102;@d66c6dc1229e711d6ed7ff88bcb8b49e",
+    "endpoint" => "102",
+    "privilege" => "reporting,all",
+    "state" => "SESSION_DESTROYING",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:03.583751Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "aor" => "<none>",
+    "appfile" => "res_pjsip_session.c",
+    "appfunction" => "session_destructor",
+    "appline" => "2922",
+    "contact" => "<none>",
+    "endpoint" => "101",
+    "privilege" => "reporting,all",
+    "state" => "SESSION_DESTROYING",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:03.583818Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_session.c",
+    "appfunction" => "session_destructor",
+    "appline" => "2971",
+    "endpoint" => "101",
+    "privilege" => "reporting,all",
+    "state" => "SESSION_DESTROYED",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:27.345486Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_authenticator_digest.c",
+    "appfunction" => "verify",
+    "appline" => "359",
+    "privilege" => "reporting,all",
+    "realm" => "asterisk",
+    "state" => "INCOMING_AUTH_VERIFY_RESULT",
+    "status" => "NOAUTH",
+    "type" => "StateChange",
+    "username" => "101"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:27.345632Z] %ElixirAmi.Event{
+  event: "challengesent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "101",
+    "challenge" => "",
+    "eventtv" => "2025-04-08T22:07:27.344+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/UDP/192.168.0.16/5060",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/UDP/192.168.0.16/59920",
+    "service" => "PJSIP",
+    "sessionid" => "bd9f460ef5e04fc7b62519a189170d9a",
+    "severity" => "Informational"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:27.345778Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_authenticator_digest.c",
+    "appfunction" => "verify",
+    "appline" => "359",
+    "privilege" => "reporting,all",
+    "realm" => "asterisk",
+    "state" => "INCOMING_AUTH_VERIFY_RESULT",
+    "status" => "SUCCESS",
+    "type" => "StateChange",
+    "username" => "101"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:27.345971Z] %ElixirAmi.Event{
+  event: "successfulauth",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "101",
+    "eventtv" => "2025-04-08T22:07:27.345+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/UDP/192.168.0.16/5060",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/UDP/192.168.0.16/59920",
+    "service" => "PJSIP",
+    "sessionid" => "bd9f460ef5e04fc7b62519a189170d9a",
+    "severity" => "Informational",
+    "usingpassword" => "1"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:27.346150Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "aor" => "101",
+    "appfile" => "res_pjsip_registrar.c",
+    "appfunction" => "register_aor_core",
+    "appline" => "935",
+    "contact" => "sip:101@192.168.0.16:59920;ob",
+    "expiration" => "300",
+    "privilege" => "reporting,all",
+    "state" => "AOR_CONTACT_REFRESHED",
+    "type" => "StateChange",
+    "useragent" => "MicroSIP/3.21.5"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:27.346317Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_authenticator_digest.c",
+    "appfunction" => "verify",
+    "appline" => "359",
+    "privilege" => "reporting,all",
+    "realm" => "asterisk",
+    "state" => "INCOMING_AUTH_VERIFY_RESULT",
+    "status" => "NOAUTH",
+    "type" => "StateChange",
+    "username" => "102"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:27.346536Z] %ElixirAmi.Event{
+  event: "challengesent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "102",
+    "challenge" => "",
+    "eventtv" => "2025-04-08T22:07:27.345+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/UDP/192.168.0.16/5060",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/UDP/192.168.0.16/43154",
+    "service" => "PJSIP",
+    "sessionid" => "1d9411b17b2448faa50f4ad3bfdad36f",
+    "severity" => "Informational"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:27.346696Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_authenticator_digest.c",
+    "appfunction" => "verify",
+    "appline" => "359",
+    "privilege" => "reporting,all",
+    "realm" => "asterisk",
+    "state" => "INCOMING_AUTH_VERIFY_RESULT",
+    "status" => "SUCCESS",
+    "type" => "StateChange",
+    "username" => "102"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:27.346859Z] %ElixirAmi.Event{
+  event: "successfulauth",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "102",
+    "eventtv" => "2025-04-08T22:07:27.346+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/UDP/192.168.0.16/5060",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/UDP/192.168.0.16/43154",
+    "service" => "PJSIP",
+    "sessionid" => "1d9411b17b2448faa50f4ad3bfdad36f",
+    "severity" => "Informational",
+    "usingpassword" => "1"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:27.413012Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "aor" => "102",
+    "appfile" => "res_pjsip_registrar.c",
+    "appfunction" => "register_aor_core",
+    "appline" => "935",
+    "contact" => "sip:102@192.168.0.16:43154;ob",
+    "expiration" => "300",
+    "privilege" => "reporting,all",
+    "state" => "AOR_CONTACT_REFRESHED",
+    "type" => "StateChange",
+    "useragent" => "MicroSIP/3.21.5"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:33.340904Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "101;@145b17cb76837ca599ccaebb707e0e63",
+    "privilege" => "reporting,all",
+    "rtt" => "304",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:07:33.341874Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "102;@d66c6dc1229e711d6ed7ff88bcb8b49e",
+    "privilege" => "reporting,all",
+    "rtt" => "232",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:17.744527Z] %ElixirAmi.Event{
+  event: "fullybooted",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "lastreload" => "36348",
+    "privilege" => "system,all",
+    "status" => "Fully Booted",
+    "uptime" => "36348"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:17.744524Z] %ElixirAmi.Event{
+  event: "successfulauth",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "test",
+    "eventtv" => "2025-04-08T22:08:17.734+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/TCP/0.0.0.0/5038",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/TCP/127.0.0.1/57298",
+    "service" => "AMI",
+    "sessionid" => "0x7f25f802c660",
+    "sessiontv" => "2025-04-08T22:08:17.734+0700",
+    "severity" => "Informational",
+    "usingpassword" => "0"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:23.512098Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_authenticator_digest.c",
+    "appfunction" => "verify",
+    "appline" => "359",
+    "privilege" => "reporting,all",
+    "realm" => "asterisk",
+    "state" => "INCOMING_AUTH_VERIFY_RESULT",
+    "status" => "NOAUTH",
+    "type" => "StateChange",
+    "username" => "101"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:23.512485Z] %ElixirAmi.Event{
+  event: "challengesent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "101",
+    "challenge" => "",
+    "eventtv" => "2025-04-08T22:08:23.511+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/UDP/192.168.0.16/5060",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/UDP/192.168.0.16/59920",
+    "service" => "PJSIP",
+    "sessionid" => "932122fc776f46ce977e055dc3922275",
+    "severity" => "Informational"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:23.512751Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_authenticator_digest.c",
+    "appfunction" => "verify",
+    "appline" => "359",
+    "privilege" => "reporting,all",
+    "realm" => "asterisk",
+    "state" => "INCOMING_AUTH_VERIFY_RESULT",
+    "status" => "SUCCESS",
+    "type" => "StateChange",
+    "username" => "101"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:23.513082Z] %ElixirAmi.Event{
+  event: "successfulauth",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "101",
+    "eventtv" => "2025-04-08T22:08:23.512+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/UDP/192.168.0.16/5060",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/UDP/192.168.0.16/59920",
+    "service" => "PJSIP",
+    "sessionid" => "932122fc776f46ce977e055dc3922275",
+    "severity" => "Informational",
+    "usingpassword" => "1"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:23.513260Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_rtp_asterisk.c",
+    "appfunction" => "rtp_allocate_transport",
+    "appline" => "3996",
+    "port" => "11238",
+    "privilege" => "reporting,all",
+    "state" => "RTP_PORT_ALLOCATED",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:23.513909Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "channel_internal_api.c",
+    "appfunction" => "ast_channel_callid_set",
+    "appline" => "831",
+    "callid" => "[C-00000032]",
+    "channel" => "PJSIP/101-00000062",
+    "priorcallid" => "",
+    "privilege" => "reporting,all",
+    "state" => "CallIDChange",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:23.518001Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "channel_internal_api.c",
+    "appfunction" => "ast_channel_callid_set",
+    "appline" => "831",
+    "callid" => "[C-00000032]",
+    "channel" => "PJSIP/102-00000063",
+    "priorcallid" => "",
+    "privilege" => "reporting,all",
+    "state" => "CallIDChange",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:23.519466Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_rtp_asterisk.c",
+    "appfunction" => "rtp_allocate_transport",
+    "appline" => "3996",
+    "port" => "13116",
+    "privilege" => "reporting,all",
+    "state" => "RTP_PORT_ALLOCATED",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:23.520965Z] %ElixirAmi.Event{
+  event: "devicestatechange",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "device" => "PJSIP/102",
+    "privilege" => "call,all",
+    "state" => "RINGING"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:23.521512Z] %ElixirAmi.Event{
+  event: "devicestatechange",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "device" => "PJSIP/101",
+    "privilege" => "call,all",
+    "state" => "INUSE"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:24.535428Z] %ElixirAmi.Event{
+  event: "devicestatechange",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "device" => "PJSIP/102",
+    "privilege" => "call,all",
+    "state" => "INUSE"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:24.536060Z] %ElixirAmi.Event{
+  event: "bridgecreate",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "bridgecreator" => "<unknown>",
+    "bridgename" => "<unknown>",
+    "bridgenumchannels" => "0",
+    "bridgetechnology" => "simple_bridge",
+    "bridgetype" => "basic",
+    "bridgeuniqueid" => "bf4aa6ce-cc19-4e8b-a0bb-059125443082",
+    "bridgevideosourcemode" => "none",
+    "privilege" => "call,all"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:29.535674Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_rtp_asterisk.c",
+    "appfunction" => "ast_rtp_read",
+    "appline" => "8280",
+    "privilege" => "reporting,all",
+    "source" => "192.168.0.16:4090",
+    "state" => "STRICT_RTP_LEARN",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:29.536857Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_rtp_asterisk.c",
+    "appfunction" => "ast_rtp_read",
+    "appline" => "8280",
+    "privilege" => "reporting,all",
+    "source" => "192.168.0.16:4108",
+    "state" => "STRICT_RTP_LEARN",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:33.341148Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "101;@145b17cb76837ca599ccaebb707e0e63",
+    "privilege" => "reporting,all",
+    "rtt" => "276",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:08:33.342182Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "102;@d66c6dc1229e711d6ed7ff88bcb8b49e",
+    "privilege" => "reporting,all",
+    "rtt" => "244",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:09:33.340456Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "101;@145b17cb76837ca599ccaebb707e0e63",
+    "privilege" => "reporting,all",
+    "rtt" => "256",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:09:33.341448Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "102;@d66c6dc1229e711d6ed7ff88bcb8b49e",
+    "privilege" => "reporting,all",
+    "rtt" => "240",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:14.595849Z] %ElixirAmi.Event{
+  event: "bridgedestroy",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "bridgecreator" => "<unknown>",
+    "bridgename" => "<unknown>",
+    "bridgenumchannels" => "0",
+    "bridgetechnology" => "simple_bridge",
+    "bridgetype" => "basic",
+    "bridgeuniqueid" => "bf4aa6ce-cc19-4e8b-a0bb-059125443082",
+    "bridgevideosourcemode" => "none",
+    "privilege" => "call,all"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:14.599250Z] %ElixirAmi.Event{
+  event: nil,
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{},
+  variables: %{}
+}
+[2025-04-08 15:10:14.599243Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "app_mixmonitor.c",
+    "appfunction" => "mixmonitor_thread",
+    "appline" => "855",
+    "file" => "/home/rawmn/AsteriskConnector/asterisk_connector/priv/recordings/101_102_2025-04-081744124903.147",
+    "privilege" => "reporting,all",
+    "state" => "MIXMONITOR_END",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:14.599332Z] %ElixirAmi.Event{
+  event: "devicestatechange",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "device" => "PJSIP/101",
+    "privilege" => "call,all",
+    "state" => "NOT_INUSE"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:14.599374Z] %ElixirAmi.Event{
+  event: "devicestatechange",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "device" => "PJSIP/102",
+    "privilege" => "call,all",
+    "state" => "NOT_INUSE"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:19.591630Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_session.c",
+    "appfunction" => "session_destructor",
+    "appline" => "2971",
+    "endpoint" => "102",
+    "privilege" => "reporting,all",
+    "state" => "SESSION_DESTROYED",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:19.591628Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "aor" => "102",
+    "appfile" => "res_pjsip_session.c",
+    "appfunction" => "session_destructor",
+    "appline" => "2922",
+    "contact" => "102;@d66c6dc1229e711d6ed7ff88bcb8b49e",
+    "endpoint" => "102",
+    "privilege" => "reporting,all",
+    "state" => "SESSION_DESTROYING",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:28.436210Z] %ElixirAmi.Event{
+  event: "fullybooted",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "lastreload" => "36478",
+    "privilege" => "system,all",
+    "status" => "Fully Booted",
+    "uptime" => "36478"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:28.436207Z] %ElixirAmi.Event{
+  event: "successfulauth",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "test",
+    "eventtv" => "2025-04-08T22:10:28.426+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/TCP/0.0.0.0/5038",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/TCP/127.0.0.1/34404",
+    "service" => "AMI",
+    "sessionid" => "0x7f25f802c660",
+    "sessiontv" => "2025-04-08T22:10:28.426+0700",
+    "severity" => "Informational",
+    "usingpassword" => "0"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:33.340978Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "101;@145b17cb76837ca599ccaebb707e0e63",
+    "privilege" => "reporting,all",
+    "rtt" => "366",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:33.341932Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "102;@d66c6dc1229e711d6ed7ff88bcb8b49e",
+    "privilege" => "reporting,all",
+    "rtt" => "258",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:46.589911Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "aor" => "<none>",
+    "appfile" => "res_pjsip_session.c",
+    "appfunction" => "session_destructor",
+    "appline" => "2922",
+    "contact" => "<none>",
+    "endpoint" => "101",
+    "privilege" => "reporting,all",
+    "state" => "SESSION_DESTROYING",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:10:46.589969Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip_session.c",
+    "appfunction" => "session_destructor",
+    "appline" => "2971",
+    "endpoint" => "101",
+    "privilege" => "reporting,all",
+    "state" => "SESSION_DESTROYED",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:11:37.951892Z] %ElixirAmi.Event{
+  event: "fullybooted",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "lastreload" => "36548",
+    "privilege" => "system,all",
+    "status" => "Fully Booted",
+    "uptime" => "36548"
+  },
+  variables: %{}
+}
+[2025-04-08 15:11:37.951895Z] %ElixirAmi.Event{
+  event: "successfulauth",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "test",
+    "eventtv" => "2025-04-08T22:11:37.941+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/TCP/0.0.0.0/5038",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/TCP/127.0.0.1/47464",
+    "service" => "AMI",
+    "sessionid" => "0x7f25f8035c70",
+    "sessiontv" => "2025-04-08T22:11:37.941+0700",
+    "severity" => "Informational",
+    "usingpassword" => "0"
+  },
+  variables: %{}
+}
+[2025-04-08 15:12:52.918714Z] %ElixirAmi.Event{
+  event: "fullybooted",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "lastreload" => "36623",
+    "privilege" => "system,all",
+    "status" => "Fully Booted",
+    "uptime" => "36623"
+  },
+  variables: %{}
+}
+[2025-04-08 15:12:52.918711Z] %ElixirAmi.Event{
+  event: "successfulauth",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountid" => "test",
+    "eventtv" => "2025-04-08T22:12:52.912+0700",
+    "eventversion" => "1",
+    "localaddress" => "IPV4/TCP/0.0.0.0/5038",
+    "privilege" => "security,all",
+    "remoteaddress" => "IPV4/TCP/127.0.0.1/40298",
+    "service" => "AMI",
+    "sessionid" => "0x7f25f0004c10",
+    "sessiontv" => "2025-04-08T22:12:52.912+0700",
+    "severity" => "Informational",
+    "usingpassword" => "0"
+  },
+  variables: %{}
+}
+[2025-04-08 15:13:33.341233Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "101;@145b17cb76837ca599ccaebb707e0e63",
+    "privilege" => "reporting,all",
+    "rtt" => "358",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:13:33.342287Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "102;@d66c6dc1229e711d6ed7ff88bcb8b49e",
+    "privilege" => "reporting,all",
+    "rtt" => "306",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:14:33.340715Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "101;@145b17cb76837ca599ccaebb707e0e63",
+    "privilege" => "reporting,all",
+    "rtt" => "384",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}
+[2025-04-08 15:14:33.341742Z] %ElixirAmi.Event{
+  event: "testevent",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "appfile" => "res_pjsip/pjsip_options.c",
+    "appfunction" => "sip_options_contact_status_notify_task",
+    "appline" => "770",
+    "contact" => "102;@d66c6dc1229e711d6ed7ff88bcb8b49e",
+    "privilege" => "reporting,all",
+    "rtt" => "286",
+    "state" => "AOR_CONTACT_QUALIFY_RESULT",
+    "status" => "Reachable",
+    "type" => "StateChange"
+  },
+  variables: %{}
+}

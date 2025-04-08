@@ -3,7 +3,8 @@ defmodule AsteriskConnector do
 
   def start(_type, _args) do
     children = [
-      AsteriskConnector.AmiEventHandler
+      AsteriskConnector.AmiEventHandler,
+      {Plug.Cowboy, scheme: :http, plug: FakeCRM, options: [port: 4001]}
     ]
 
     opts = [strategy: :one_for_one, name: AsteriskConnector.Supervisor]
