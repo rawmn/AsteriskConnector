@@ -1,0 +1,495 @@
+[2025-04-11 07:09:08.806500Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "DIALEDPEERNAME"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806506Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "DIALEDTIME_MS"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806511Z] %ElixirAmi.Event{
+  event: "newstate",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "7",
+    "channelstatedesc" => "Busy",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "3",
+    "privilege" => "call,all",
+    "uniqueid" => "1744355348.0"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806513Z] %ElixirAmi.Event{
+  event: "hanguprequest",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "7",
+    "channelstatedesc" => "Busy",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "3",
+    "privilege" => "call,all",
+    "uniqueid" => "1744355348.0"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806506Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "RINGTIME_MS"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806494Z] %ElixirAmi.Event{
+  event: "newexten",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "appdata" => "PJSIP/102,20,",
+    "application" => "Dial",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "extension" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806488Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "1",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "192.168.0.16",
+    "variable" => "SIPDOMAIN"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806497Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "DIALSTATUS"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806498Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "DIALEDPEERNUMBER"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806508Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "RINGTIME"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806510Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "PROGRESSTIME_MS"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806514Z] %ElixirAmi.Event{
+  event: "newchannel",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "1",
+    "privilege" => "call,all",
+    "uniqueid" => "1744355348.0"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806496Z] %ElixirAmi.Event{
+  event: "newexten",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "appdata" => "",
+    "application" => "NoOp",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "extension" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "1",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806501Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "ANSWEREDTIME"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806504Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "DIALEDTIME"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806503Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "ANSWEREDTIME_MS"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806511Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "CHANUNAVAIL",
+    "variable" => "DIALSTATUS"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806515Z] %ElixirAmi.Event{
+  event: "hangup",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "cause" => "34",
+    "cause-txt" => "Circuit/channel congestion",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "7",
+    "channelstatedesc" => "Busy",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "3",
+    "privilege" => "call,all",
+    "uniqueid" => "1744355348.0"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806517Z] %ElixirAmi.Event{
+  event: "softhanguprequest",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "cause" => "16",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "7",
+    "channelstatedesc" => "Busy",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "3",
+    "privilege" => "call,all",
+    "uniqueid" => "1744355348.0"
+  },
+  variables: %{}
+}
+[2025-04-11 07:09:08.806509Z] %ElixirAmi.Event{
+  event: "varset",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000000",
+    "channelstate" => "4",
+    "channelstatedesc" => "Ring",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "102",
+    "language" => "en",
+    "linkedid" => "1744355348.0",
+    "priority" => "2",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744355348.0",
+    "value" => "",
+    "variable" => "PROGRESSTIME"
+  },
+  variables: %{}
+}
