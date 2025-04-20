@@ -78,7 +78,7 @@ defmodule AsteriskConnector.CallDetail do
         last_channel_state: keys["channelstatedesc"]
     }
 
-    IO.inspect(new_details.caller.channel, label: "channel")
+    #IO.inspect(new_details.caller.channel, label: "channel")
 
     AsteriskConnector.ApiRequest.send_event(new_details, "start")
     {:noreply, new_details}
@@ -95,7 +95,7 @@ defmodule AsteriskConnector.CallDetail do
   end
 
   def handle_cast({:event, %{event: "newchannel", keys: keys}}, details) do
-    IO.inspect(keys["channel"])
+    #IO.inspect(keys["channel"])
 
     case DbFunctions.get_chat_id(keys["calleridnum"]) do
       nil -> nil
