@@ -25,10 +25,11 @@ defmodule AsteriskConnector.MixProject do
       # {:ex_ami, "~> 0.3.3"}
       {:elixir_ami, "~> 0.0.20"},
       {:plug_cowboy, "~> 2.6"},
-      # {:httpoison, "~> 1.8"},
-      # {:jason, "~> 1.4"},
+      {:ecto_sql, "~> 3.12.1"},
+      {:postgrex, ">= 0.0.0"},
+      {:jason, "~> 1.4"},
       {:req, "~> 0.5.10"},
-      {:gproc, "~> 0.3.1"}
+      {:nadia, "~> 0.7.0"}
     ]
   end
 end

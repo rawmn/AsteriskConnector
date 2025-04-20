@@ -39,6 +39,18 @@ defmodule AsteriskConnector.AmiEventRouter do
     CallDetail.event_receiver(pid, event)
   end
 
+  def handle_cast(
+        {:new_event,
+         %{event: "blindtransfer", keys: %{"transfererlinkedid" => linkedid}} = event},
+        active_calls
+      ) do
+    active_calls
+    |> Map.get(linkedid)
+    |> transfer_event(event)
+
+    {:noreply, active_calls}
+  end
+
   def handle_cast({:new_event, event}, active_calls) do
     active_calls
     |> Map.get(event.keys["linkedid"])
@@ -51,7 +63,7 @@ defmodule AsteriskConnector.AmiEventRouter do
     case CallDetail.start() do
       {:ok, pid} ->
         transfer_event(pid, event)
-        {:noreply,Map.put(active_calls, linkedid, pid)}
+        {:noreply, Map.put(active_calls, linkedid, pid)}
 
       {:error, reason} ->
         Logger.error("Failed to start CallDetail process: #{inspect(reason)}")

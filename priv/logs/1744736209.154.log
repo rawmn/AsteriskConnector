@@ -1,0 +1,144 @@
+[2025-04-15 16:57:19.160976Z] %ElixirAmi.Event{
+  event: "newchannel",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000066",
+    "channelstate" => "0",
+    "channelstatedesc" => "Down",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "s",
+    "language" => "en",
+    "linkedid" => "1744736209.154",
+    "priority" => "1",
+    "privilege" => "call,all",
+    "uniqueid" => "1744736209.154"
+  },
+  variables: %{}
+}
+[2025-04-15 16:57:19.161326Z] %ElixirAmi.Event{
+  event: "newexten",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "appdata" => "(Outgoing Line)",
+    "application" => "AppDial2",
+    "calleridname" => "101",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000066",
+    "channelstate" => "0",
+    "channelstatedesc" => "Down",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "s",
+    "extension" => "s",
+    "language" => "en",
+    "linkedid" => "1744736209.154",
+    "priority" => "1",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744736209.154"
+  },
+  variables: %{}
+}
+[2025-04-15 16:57:19.161624Z] %ElixirAmi.Event{
+  event: "newcallerid",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "IVAN",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000066",
+    "channelstate" => "0",
+    "channelstatedesc" => "Down",
+    "cid-callingpres" => "0 (Presentation Allowed, Not Screened)",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "s",
+    "language" => "en",
+    "linkedid" => "1744736209.154",
+    "priority" => "1",
+    "privilege" => "call,all",
+    "uniqueid" => "1744736209.154"
+  },
+  variables: %{}
+}
+[2025-04-15 16:57:19.161837Z] %ElixirAmi.Event{
+  event: "newconnectedline",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "IVAN",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000066",
+    "channelstate" => "0",
+    "channelstatedesc" => "Down",
+    "connectedlinename" => "IVAN",
+    "connectedlinenum" => "101",
+    "context" => "org_all",
+    "exten" => "s",
+    "language" => "en",
+    "linkedid" => "1744736209.154",
+    "priority" => "1",
+    "privilege" => "call,all",
+    "uniqueid" => "1744736209.154"
+  },
+  variables: %{}
+}
+[2025-04-15 16:57:19.162504Z] %ElixirAmi.Event{
+  event: "newstate",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "IVAN",
+    "calleridnum" => "101",
+    "channel" => "PJSIP/101-00000066",
+    "channelstate" => "5",
+    "channelstatedesc" => "Ringing",
+    "connectedlinename" => "IVAN",
+    "connectedlinenum" => "101",
+    "context" => "org_all",
+    "exten" => "s",
+    "language" => "en",
+    "linkedid" => "1744736209.154",
+    "priority" => "1",
+    "privilege" => "call,all",
+    "uniqueid" => "1744736209.154"
+  },
+  variables: %{}
+}
+[2025-04-15 16:57:21.043878Z] %ElixirAmi.Event{
+  event: "hangup",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "IVAN",
+    "calleridnum" => "101",
+    "cause" => "0",
+    "cause-txt" => "Unknown",
+    "channel" => "PJSIP/101-00000066",
+    "channelstate" => "5",
+    "channelstatedesc" => "Ringing",
+    "connectedlinename" => "IVAN",
+    "connectedlinenum" => "101",
+    "context" => "org_all",
+    "exten" => "s",
+    "language" => "en",
+    "linkedid" => "1744736209.154",
+    "priority" => "1",
+    "privilege" => "call,all",
+    "uniqueid" => "1744736209.154"
+  },
+  variables: %{}
+}

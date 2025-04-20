@@ -1,0 +1,98 @@
+[2025-04-15 13:53:20.077864Z] %ElixirAmi.Event{
+  event: "newchannel",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "102",
+    "calleridnum" => "102",
+    "channel" => "PJSIP/102-00000027",
+    "channelstate" => "0",
+    "channelstatedesc" => "Down",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "s",
+    "language" => "en",
+    "linkedid" => "1744725200.62",
+    "priority" => "1",
+    "privilege" => "call,all",
+    "uniqueid" => "1744725200.62"
+  },
+  variables: %{}
+}
+[2025-04-15 13:53:20.078082Z] %ElixirAmi.Event{
+  event: "newexten",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "appdata" => "(Outgoing Line)",
+    "application" => "AppDial2",
+    "calleridname" => "102",
+    "calleridnum" => "102",
+    "channel" => "PJSIP/102-00000027",
+    "channelstate" => "0",
+    "channelstatedesc" => "Down",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "s",
+    "extension" => "s",
+    "language" => "en",
+    "linkedid" => "1744725200.62",
+    "priority" => "1",
+    "privilege" => "dialplan,all",
+    "uniqueid" => "1744725200.62"
+  },
+  variables: %{}
+}
+[2025-04-15 13:53:20.078593Z] %ElixirAmi.Event{
+  event: "hanguprequest",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "102",
+    "calleridnum" => "102",
+    "cause" => "17",
+    "channel" => "PJSIP/102-00000027",
+    "channelstate" => "0",
+    "channelstatedesc" => "Down",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "s",
+    "language" => "en",
+    "linkedid" => "1744725200.62",
+    "priority" => "1",
+    "privilege" => "call,all",
+    "uniqueid" => "1744725200.62"
+  },
+  variables: %{}
+}
+[2025-04-15 13:53:20.079064Z] %ElixirAmi.Event{
+  event: "hangup",
+  source: :asterisk_connection,
+  action_id: nil,
+  keys: %{
+    "accountcode" => "",
+    "calleridname" => "102",
+    "calleridnum" => "102",
+    "cause" => "17",
+    "cause-txt" => "User busy",
+    "channel" => "PJSIP/102-00000027",
+    "channelstate" => "0",
+    "channelstatedesc" => "Down",
+    "connectedlinename" => "<unknown>",
+    "connectedlinenum" => "<unknown>",
+    "context" => "org_all",
+    "exten" => "s",
+    "language" => "en",
+    "linkedid" => "1744725200.62",
+    "priority" => "1",
+    "privilege" => "call,all",
+    "uniqueid" => "1744725200.62"
+  },
+  variables: %{}
+}

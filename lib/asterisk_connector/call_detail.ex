@@ -34,7 +34,11 @@ defmodule AsteriskConnector.CallDetail do
               quality: nil
             }
 
+  require Logger
+  require Ecto.Query
+
   alias AsteriskConnector.Helper, as: Helper
+  alias AsteriskConnector.DbFunctions, as: DbFunctions
 
   use GenServer
 
@@ -74,11 +78,30 @@ defmodule AsteriskConnector.CallDetail do
         last_channel_state: keys["channelstatedesc"]
     }
 
-    AsteriskConnector.Api.send_event(:start, new_details)
+    IO.inspect(new_details.caller.channel, label: "channel")
+
+    AsteriskConnector.ApiRequest.send_event(new_details, "start")
     {:noreply, new_details}
   end
 
+  def handle_cast({:event, %{event: "blindtransfer", keys: keys}}, details) do
+    DbFunctions.get_chat_id(keys["extension"])
+    |> case do
+      nil -> nil
+      chat_id -> AsteriskConnector.TelegramBot.send_message(chat_id, {:transfer_call, keys})
+    end
+
+    {:noreply, details}
+  end
+
   def handle_cast({:event, %{event: "newchannel", keys: keys}}, details) do
+    IO.inspect(keys["channel"])
+
+    case DbFunctions.get_chat_id(keys["calleridnum"]) do
+      nil -> nil
+      chat_id -> AsteriskConnector.TelegramBot.send_message(chat_id, {:start_call, details})
+    end
+
     {:noreply,
      %{
        details
@@ -98,6 +121,7 @@ defmodule AsteriskConnector.CallDetail do
       ) do
     answer_time = DateTime.utc_now()
     start_time = details.timestamps.start
+    duration_ring = if is_nil(start_time), do: nil, else: DateTime.diff(answer_time, start_time)
 
     record_link = Helper.start_recording_call(keys["channel"], details)
 
@@ -106,14 +130,14 @@ defmodule AsteriskConnector.CallDetail do
       | timestamps: %{
           details.timestamps
           | answer: answer_time,
-            duration_ring: DateTime.diff(answer_time, start_time)
+            duration_ring: duration_ring
         },
         last_channel_state: keys["channelstatedesc"],
         bridge_id: keys["bridgeuniqueid"],
         record_link: record_link
     }
 
-    AsteriskConnector.Api.send_event(:answer, new_details)
+    AsteriskConnector.ApiRequest.send_event(new_details, "answer")
     {:noreply, new_details}
   end
 
@@ -133,11 +157,54 @@ defmodule AsteriskConnector.CallDetail do
         {:event, %{event: "varset", keys: %{"variable" => "DIALSTATUS", "value" => status}}},
         details
       ) do
+    cond do
+      status in ~w"BUSY NOANSWER" ->
+        DbFunctions.get_chat_id(details.callee.number)
+        |> case do
+          nil -> nil
+          chat_id -> AsteriskConnector.TelegramBot.send_message(chat_id, {:missed_call, details})
+        end
+
+      true ->
+        nil
+    end
+
     {
       :noreply,
       %{details | status: status}
     }
   end
+
+  # def handle_cast(
+  #       {:event,
+  #        %{event: "bridgeleave", keys: %{"linkedid" => linkedid, "uniqueid" => linkedid} = keys}},
+  #       details
+  #     ) do
+  #   end_time = DateTime.utc_now()
+  #   start_time = details.timestamps.start
+  #   answer_time = details.timestamps.answer
+  #   duration_answer = if is_nil(answer_time), do: nil, else: DateTime.diff(end_time, answer_time)
+  #   duration_call = if is_nil(start_time), do: nil, else: DateTime.diff(end_time, start_time)
+
+  #   new_details = %{
+  #     details
+  #     | timestamps: %{
+  #         details.timestamps
+  #         | end: end_time,
+  #           duration_answer: duration_answer,
+  #           duration_call: duration_call
+  #       },
+  #       last_channel_state: keys["channelstatedesc"]
+  #   }
+
+  #   case DbFunctions.insert_db(new_details) do
+  #     {:ok, _} -> Logger.debug("Database: Insertion completed")
+  #     {_, error} -> Logger.error("Database: Insertion error: #{inspect(error.errors)}")
+  #   end
+
+  #   AsteriskConnector.ApiRequest.send_event(new_details, "end")
+  #   {:noreply, new_details}
+  # end
 
   def handle_cast(
         {:event,
@@ -147,8 +214,8 @@ defmodule AsteriskConnector.CallDetail do
     end_time = DateTime.utc_now()
     start_time = details.timestamps.start
     answer_time = details.timestamps.answer
-    duration_answer = if is_nil(answer_time), do: 0, else: DateTime.diff(end_time, answer_time)
-    duration_call = DateTime.diff(end_time, start_time)
+    duration_answer = if is_nil(answer_time), do: nil, else: DateTime.diff(end_time, answer_time)
+    duration_call = if is_nil(start_time), do: nil, else: DateTime.diff(end_time, start_time)
 
     new_details = %{
       details
@@ -161,8 +228,13 @@ defmodule AsteriskConnector.CallDetail do
         last_channel_state: keys["channelstatedesc"]
     }
 
-    AsteriskConnector.Api.send_event(:end, new_details)
-    AsteriskConnector.Api.send_history(new_details)
+    case DbFunctions.insert_db(new_details) do
+      {:ok, _} -> Logger.debug("Database: Insertion completed")
+      {_, error} -> Logger.error("Database: Insertion error: #{inspect(error.errors)}")
+    end
+
+    AsteriskConnector.ApiRequest.send_event(new_details, "end")
+    AsteriskConnector.ApiRequest.send_history(new_details)
     {:stop, :normal, new_details}
   end
 
